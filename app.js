@@ -4,8 +4,12 @@ const app = express();
 const connectDB = require('./db/connect');
 const dotenv = require('dotenv');
 const bcrypt = require('bcryptjs');
+const cors = require('cors');
+
 
 app.use(express.json());
+app.use(cors());
+
 
 const BloodDonation = require('./models/BloodDonation');
 const User = require('./models/User');
@@ -31,7 +35,7 @@ app.get('/users', async (req, res) => {
 });
 
 // Get all blood donations
-app.get('/blooddonations', async (req, res) => {
+app.get('/allbloodgroup', async (req, res) => {
     try {
         const bloodDonations = await BloodDonation.find();
         res.status(200).json(bloodDonations);
