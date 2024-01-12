@@ -101,7 +101,7 @@ app.post('/login', async (req, res) => {
 });
 
 // Blood donation route
-app.post('/donateblood', async (req, res) => {
+app.post('/addblood', async (req, res) => {
     try {
         const { userId, bloodGroup, location, isActive } = req.body;
 
