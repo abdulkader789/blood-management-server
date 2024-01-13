@@ -4,11 +4,13 @@ const UserSchema = new mongoose.Schema({
     email: String,
     password: String,
     fullName: String,
+    bloodGroup: String,
     phone: String,
     presentAddress: String,
-    availableLocationsToDonate: [String], // Assuming an array of strings for locations
     age: Number,
+    isActive: Boolean,
     lastDonated: Date,
+    donateAreas: [String]
 }, { timestamps: true });
 
 const User = mongoose.model('User', UserSchema);
